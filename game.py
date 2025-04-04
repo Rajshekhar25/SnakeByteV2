@@ -17,3 +17,10 @@ SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 800
 FPS = 25
 KEY = {"UP":1 , "DOWN":2 , "LEFT":3, "RIGHT":4}
+
+# initialise screen
+screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT),pygame.HWSURFACE)
+
+# used hw surface which stands for hardware surface refers to using memory on the video card for storing
+# draws as opposed to main memory
+
