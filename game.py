@@ -34,3 +34,5 @@ score_msg = score_font.render("Score : ",1,pygame.Color("green"))
 score_msg_size = score_font.size("Score")
 background_color = pygame.Color(0,0,0)    # we will fill background color as black
 black = pygame.Color(0,0,0)
+
+gameClock = pygame.time.Clock()
