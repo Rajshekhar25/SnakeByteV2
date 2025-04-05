@@ -28,4 +28,9 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT),pygame.HWSURFACE)
 # Resources
 score_font = pygame.font.Font(None,38)
 score_numb_font = pygame.font.Font(None,28)
-
+game_over_font = pygame.font.Font(None,46)
+play_again_font = score_numb_font
+score_msg = score_font.render("Score : ",1,pygame.Color("green"))
+score_msg_size = score_font.size("Score")
+background_color = pygame.Color(0,0,0)    # we will fill background color as black
+black = pygame.Color(0,0,0)
