@@ -49,3 +49,7 @@ def checkLimits(snake):
         snake.x = SNAKE_SIZE
     if(snake.x < 0):    # this will be checked when some part of snake is on other side and some on opposite side
         snake.x = SCREEN_WIDTH - SNAKE_SIZE
+    if(snake.y > SCREEN_HEIGHT):
+        snake.y = SNAKE_SIZE
+    if(snake.y < 0):   # this also same half half
+        snake.y = SCREEN_HEIGHT - SNAKE_SIZE
