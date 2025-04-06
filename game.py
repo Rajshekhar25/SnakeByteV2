@@ -41,3 +41,11 @@ def checkCollision(posA,As ,posB , Bs):    # As is the size of a and Bs is the s
     if(posA.x < posB.x+Bs and posA.x+As > posB.x and posA.y < posB.y+Bs and posA.y+As > posB.y):
         return True
     return False
+
+# to check the boundaries  here we are not limiting boundaries like it can pass through screen and come from other side
+
+def checkLimits(snake):
+    if(snake.x > SCREEN_WIDTH):
+        snake.x = SNAKE_SIZE
+    if(snake.x < 0):    # this will be checked when some part of snake is on other side and some on opposite side
+        snake.x = SCREEN_WIDTH - SNAKE_SIZE
