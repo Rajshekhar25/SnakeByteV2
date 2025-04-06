@@ -36,3 +36,8 @@ background_color = pygame.Color(0,0,0)    # we will fill background color as bla
 black = pygame.Color(0,0,0)
 
 gameClock = pygame.time.Clock()
+
+def checkCollision(posA,As ,posB , Bs):    # As is the size of a and Bs is the size of b
+    if(posA.x < posB.x+Bs and posA.x+As > posB.x and posA.y < posB.y+Bs and posA.y+As > posB.y):
+        return True
+    return False
