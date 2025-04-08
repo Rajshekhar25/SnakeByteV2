@@ -53,3 +53,15 @@ def checkLimits(snake):
         snake.y = SNAKE_SIZE
     if(snake.y < 0):   # this also same half half
         snake.y = SCREEN_HEIGHT - SNAKE_SIZE
+        
+        
+        #the snake food is called apple
+class Apple:
+    def __init__(self, x ,y,state):
+        self.x = x
+        self.y = y
+        self.state = state
+        self.color = pygame.color.Color("orange")     # color of food
+
+    def draw(self,screen):
+        pygame.draw.rect(screen,self.color,(self.x,self.y,APPLE_SIZE,APPLE_SIZE),0)
