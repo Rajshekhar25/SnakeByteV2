@@ -65,3 +65,12 @@ class Apple:
 
     def draw(self,screen):
         pygame.draw.rect(screen,self.color,(self.x,self.y,APPLE_SIZE,APPLE_SIZE),0)
+        
+        
+class segment:
+    # initially snake will move in up direction
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.direction = KEY["UP"]
+        self.color = "white"
