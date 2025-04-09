@@ -87,3 +87,17 @@ class snake:
         blackBox.direction = KEY["UP"]
         blackBox.color = "NULL"
         self.stack.append(blackBox)
+        
+        
+        
+        # we will define moves of the snake
+
+    def move(self):
+        last_element = len(self.stack)-1
+        while(last_element != 0):
+            self.stack[last_element].direction = self.stack[last_element-1].direction
+            self.stack[last_element].x = self.stack[last_element-1].x 
+            self.stack[last_element].y = self.stack[last_element-1].y 
+            last_element-=1
+        if(len(self.stack)<2):
+            last_segment = self
