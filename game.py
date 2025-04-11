@@ -101,3 +101,21 @@ class snake:
             last_element-=1
         if(len(self.stack)<2):
             last_segment = self
+        else:
+            last_segment = self.stack.pop(last_element)
+        last_segment.direction = self.stack[0].direction
+        if(self.stack[0].direction ==KEY["UP"]):
+            last_segment.y = self.stack[0].y - (SPEED * FPS)
+        elif(self.stack[0].direction == KEY["DOWN"]):
+            last_segment.y = self.stack[0].y + (SPEED * FPS) 
+        elif(self.stack[0].direction ==KEY["LEFT"]):
+            last_segment.x = self.stack[0].x - (SPEED * FPS)
+        elif(self.stack[0].direction == KEY["RIGHT"]):
+            last_segment.x = self.stack[0].x + (SPEED * FPS)
+        self.stack.insert(0,last_segment)
+
+    def getHead(self):    # head of the snake 
+        return(self.stack[0])   # It will be always 0 index
+
+ 
+
