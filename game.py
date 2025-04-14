@@ -117,5 +117,22 @@ class snake:
     def getHead(self):    # head of the snake 
         return(self.stack[0])   # It will be always 0 index
 
- 
+    def grow(self):
+        last_element = len(self.stack) -1
+        self.stack[last_element].direction = self.stack[last_element].direction
+        if(self.stack[last_element].direction == KEY["UP"]):
+            newSegment = segment(self.stack[last_element].x, self.stack[last_element].y -SNAKE_SIZE)
+            blackBox = segment(newSegment.x , newSegment.y-SEPARATION)
+        
+        elif(self.stack[last_element].direction == KEY["DOWN"]):
+            newSegment = segment(self.stack[last_element].x, self.stack[last_element].y +SNAKE_SIZE)
+            blackBox = segment(newSegment.x , newSegment.y+SEPARATION)
+
+        elif(self.stack[last_element].direction == KEY["LEFT"]):
+            newSegment = segment(self.stack[last_element].x - SNAKE_SIZE, self.stack[last_element].y)
+            blackBox = segment(newSegment.x - SEPARATION , newSegment.y)
+        
+        elif(self.stack[last_element].direction == KEY["RIGHT"]):
+            newSegment = segment(self.stack[last_element].x + SNAKE_SIZE, self.stack[last_element].y)
+            blackBox = segment(newSegment.x + SEPARATION , newSegment.y)
 
