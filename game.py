@@ -136,3 +136,12 @@ class snake:
             newSegment = segment(self.stack[last_element].x + SNAKE_SIZE, self.stack[last_element].y)
             blackBox = segment(newSegment.x + SEPARATION , newSegment.y)
 
+ 
+        blackBox.color = "NULL"
+        self.stack.append(newSegment)
+        self.stack.append(blackBox)
+        
+    def setDirection(self,direction):
+        if(self.direction == KEY["RIGHT"] and direction == KEY["LEFT"] or self.direction == KEY["LEFT"] and 
+                direction == KEY["RIGHT"]):
+            pass
