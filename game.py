@@ -141,7 +141,15 @@ class snake:
         self.stack.append(newSegment)
         self.stack.append(blackBox)
         
+   def iterateSegments(self,delta):
+        pass
+
     def setDirection(self,direction):
         if(self.direction == KEY["RIGHT"] and direction == KEY["LEFT"] or self.direction == KEY["LEFT"] and 
                 direction == KEY["RIGHT"]):
             pass
+        elif(self.direction == KEY["UP"] and direction == KEY["DOWN"] or self.direction == KEY["UP"] and 
+                direction == KEY["DOWN"]):
+            pass
+        else:
+            self.direction = direction
