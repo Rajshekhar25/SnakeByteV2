@@ -141,7 +141,7 @@ class snake:
         self.stack.append(newSegment)
         self.stack.append(blackBox)
         
-   def iterateSegments(self,delta):
+    def iterateSegments(self,delta):
         pass
 
     def setDirection(self,direction):
