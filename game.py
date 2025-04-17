@@ -143,7 +143,9 @@ class snake:
         
     def iterateSegments(self,delta):
         pass
-
+    
+    
+    
     def setDirection(self,direction):
         if(self.direction == KEY["RIGHT"] and direction == KEY["LEFT"] or self.direction == KEY["LEFT"] and 
                 direction == KEY["RIGHT"]):
@@ -153,3 +155,22 @@ class snake:
             pass
         else:
             self.direction = direction
+
+    def get_rect(self):     # get the rectangle shape 
+        rect = (self.x , self.y)
+        return rect
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def setX(self,x):
+        self.x = x
+    
+    def setY(self,y):
+        self.y = y
+        
+          # now we will make the function for when the snake eats itself
+          
