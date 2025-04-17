@@ -174,3 +174,16 @@ class snake:
         
           # now we will make the function for when the snake eats itself
           
+          
+         #  draw the snake 
+    def draw(self,screen):
+        pygame.draw.rect(screen,pygame.color.Color("green"), (self.stack[0].x , self.stack[0].y, 
+                SNAKE_SIZE, SNAKE_SIZE),0)
+        counter = 1
+        while(counter < len(self.stack)):
+            if(self.stack[counter].color == "NULL"):
+                counter +=1
+                continue
+            pygame.draw.rect(screen , pygame.color.Color("yellow"), (self.stack[counter].x,
+                self.stack[counter].y, SNAKE_SIZE , SNAKE_SIZE),0)
+            counter +=1     
