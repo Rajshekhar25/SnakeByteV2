@@ -175,7 +175,7 @@ class snake:
           # now we will make the function for when the snake eats itself
           
           
-         #  draw the snake 
+         # draw the snake 
     def draw(self,screen):
         pygame.draw.rect(screen,pygame.color.Color("green"), (self.stack[0].x , self.stack[0].y, 
                 SNAKE_SIZE, SNAKE_SIZE),0)
@@ -187,3 +187,29 @@ class snake:
             pygame.draw.rect(screen , pygame.color.Color("yellow"), (self.stack[counter].x,
                 self.stack[counter].y, SNAKE_SIZE , SNAKE_SIZE),0)
             counter +=1     
+      
+      
+      
+      #define keys      
+    def getKey():
+     for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                return KEY["UP"]
+            elif event.key == pygame.K_DOWN:
+                return KEY["DOWN"]
+            elif event.key == pygame.K_LEFT:
+                return KEY["LEFT"]
+            elif event.key == pygame.K_RIGHT:
+                return KEY["RIGHT"]
+            # for exit 
+            elif event.key == pygame.K_ESCAPE:
+                return "exit"
+            # if we want to continue playing again
+            elif event.key == pygame.K_y:
+                return "yes"
+            # if we don't want to play game
+            elif event.key == pygame.K_n:
+                return "no"
+        if event.type == pygame.QUIT:
+            sys.exit(0)
