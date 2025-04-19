@@ -213,3 +213,23 @@ class snake:
                 return "no"
         if event.type == pygame.QUIT:
             sys.exit(0)
+            
+            
+    def endGame():
+     message = game_over_font.render("Gsme Over",1,pygame.Color("white"))
+     message_play_again = play_again_font.render("Play Again ? (Y/N)",1,pygame.Color("green"))
+     screen.blit(message,(320,240))
+     screen.blit(message_play_again,(320+12,240+40))
+
+    pygame.display.flip()
+    pygame.display.update()
+
+    mKey = getKey()
+    while(mKey != "exit"):
+        if(mKey == "yes"):
+            main()
+        elif(mKey == "no"):
+            break
+        mKey = getKey()
+        gameClock.tick(FPS)
+    sys.exit(0)
