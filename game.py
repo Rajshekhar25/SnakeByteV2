@@ -226,10 +226,15 @@ class snake:
 
     mKey = getKey()
     while(mKey != "exit"):
-        if(mKey == "yes"):
-            main()
-        elif(mKey == "no"):
-            break
-        mKey = getKey()
-        gameClock.tick(FPS)
+          if(mKey == "yes"):
+                main()
+          elif(mKey == "no"):
+               break
+    mKey = getKey()
+    gameClock.tick(FPS)
     sys.exit(0)
+    
+def drawScore(score):
+    score_numb = score_numb_font.render(str(score),1,pygame.Color("red"))
+    screen.blit(score_msg, (SCREEN_WIDTH - score_msg_size[0]-60,10))
+    screen.blit(score_numb,(SCREEN_WIDTH - 45,14))
