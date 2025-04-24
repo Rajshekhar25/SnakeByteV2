@@ -238,3 +238,10 @@ def drawScore(score):
     score_numb = score_numb_font.render(str(score),1,pygame.Color("red"))
     screen.blit(score_msg, (SCREEN_WIDTH - score_msg_size[0]-60,10))
     screen.blit(score_numb,(SCREEN_WIDTH - 45,14))
+    
+    
+def drawGameTime(gameTime):
+    game_time = score_font.render("Time:" , 1, pygame.Color("white"))
+    game_time_numb = score_numb_font.render(str(gameTime/1000),1,pygame.Color("white"))
+    screen.blit(game_time,(30,10))
+    screen.blit(game_time_numb,(105,14))
