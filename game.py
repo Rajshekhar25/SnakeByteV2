@@ -278,3 +278,18 @@ def respawnApples(apples , quantity , sx ,sy):
         apples.append(Apple(x,y,1))
         angle = 999
         counter +=1
+        
+def main():
+    score = 0
+
+
+    #initialisation of snake
+
+    mySnake = snake(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+    mySnake.setDirection(KEY["UP"])
+    mySnake.move()
+    start_segments = 3   # initially we will be having 3 segment long snake
+    while(start_segments > 0):
+        mySnake.grow()
+        mySnake.move()
+        start_segments -=1
