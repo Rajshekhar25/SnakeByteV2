@@ -336,3 +336,20 @@ def main():
         if(eaten_apple == True):
             eaten_apple = False
             respawnApple(apples , 0 , mySnake.getHead().x , mySnake.getHead().y)
+
+
+        #drawing
+        screen.fill(background_color)
+        for myApple in apples:
+            if(myApple.state == 1):
+                myApple.draw(screen)
+        
+        mySnake.draw(screen)
+        drawScore(score)
+        gameTime = pygame.time.get_ticks() - startTime
+        drawGameTime(gameTime)
+
+        pygame.display.flip()
+        pygame.display.update()
+
+main()
