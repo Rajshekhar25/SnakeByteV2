@@ -293,3 +293,17 @@ def main():
         mySnake.grow()
         mySnake.move()
         start_segments -=1
+        
+    
+    
+    # food
+    max_apples = 1  # 1 apple when snake eats 
+    eaten_apple = False   # as snake will eat food apple will be disappear
+    apples = [Apple(random.randint(60,SCREEN_WIDTH), random.randint(60,SCREEN_HEIGHT),1)]
+    respawnApples(apples,max_apples , mySnake.x , mySnake.y)
+
+    startTime = pygame.time.get_ticks()
+    endgame = 0
+
+    while(endgame != 1):
+        gameClock.tick(FPS)
