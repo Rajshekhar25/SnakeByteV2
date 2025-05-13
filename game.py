@@ -326,3 +326,13 @@ def main():
                     myApple.state = 0
                     score += 10
                     eaten_apple = True
+                    
+                    # update position
+        if(keyPress):
+            mySnake.setDirection(keyPress)
+        mySnake.move()
+
+        # respawning food 
+        if(eaten_apple == True):
+            eaten_apple = False
+            respawnApple(apples , 0 , mySnake.getHead().x , mySnake.getHead().y)
