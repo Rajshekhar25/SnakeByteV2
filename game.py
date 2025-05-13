@@ -307,3 +307,22 @@ def main():
 
     while(endgame != 1):
         gameClock.tick(FPS)
+        
+        
+               # input
+        keyPress = getKey()
+        if keyPress == "exit":
+            endgame = 1
+
+        # to check collision
+        checkLimits(mySnake)
+        if(mySnake.checkCrashing() == True):
+            endGame()
+
+        for myApple in apples:
+            if(myApple.state == 1):
+                if(checkCollision(mySnake.getHead(),SNAKE_SIZE,myApple,APPLE_SIZE)==True):
+                    mySnake.grow()
+                    myApple.state = 0
+                    score += 10
+                    eaten_apple = True
